@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 CITIES = ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Bloemfontein", "Polokwane"]
 
-@app.route("/")
+@app.route("/", methods=["GET", "HEAD"])
 def index():
     city = request.args.get("city", "Johannesburg")
     weather = get_weather(city)
